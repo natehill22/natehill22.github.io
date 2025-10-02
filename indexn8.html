@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Nathaniel (Nate) Hill</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet/portfolion8.css">
+    </head>
+    <!--BODY-->
+
+    <body>
+
+        <!--NAVBAR-->
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#github">GitHub</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!--Breaks inserted to add space between navbar and the first heading-->
+        <br>
+        <br>
+
+        <!--BACKGROUND VIDEO-->
+        <div id="home">
+            <video autoplay muted loop id="Typing_Video">
+                <source src="images/video/Typing.mp4" type="video/mp4">
+                <!--Display message if video fails to run-->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!--VIDEO TEXT-->
+        <div class="Video_Text">
+            <h1 class="white-text">Nathaniel Hill's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <br>
+                    <q>Programming isn't about what you know; it's about what you can figure out.</q>
+                    <br> -Chris Pine
+                    <br>
+                    <br>
+                    <br> My name is Nathaniel Hill. Welcome to my portfolio website. On it, I will tell you about my
+                    background and experience.
+                    <br>
+                    <br> Thank you for stopping by and enjoy!
+                </p>
+            </strong>
+        </div>
+
+        <!--ABOUT SECTION-->
+        <div class="row" id="about">
+            <!--Left column-->
+            <div class="column_2">
+                <img src="images/code1.jpg" alt="A close-up image of computer code">
+            </div>
+            <!--Right column-->
+            <div class="column_1">
+                <h1>About</h1>
+                <p>
+                    I am a software developer who loves to code! I also enjoy biking, cooking, baking, traveling, gaming, and time
+                    with my family.
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                        Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
+                    language: HTML, CSS, JavaScript, SQL, Python, and more.
+                    <br>
+                    <br>I am a full-stack developer and would love to work with you on your project. <a
+                        href="#contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+
+        <!--GITHUB SECTION-->
+        <div class="row" id="github">
+            <!--Left column-->
+            <div class="column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub profile here:
+                    <br>
+                <p class="center"><a href="https://github.com/natehill22/" target="_blank">Nathaniel Hill's GitHub</a></p>
+                </p>
+            </div>
+            <!--Right column-->
+            <div class="column_2">
+                <a href="https://github.com/natehill22/" target="_blank"><img src="images/GitHub.png" alt="GitHub logo"></a>
+            </div>
+        </div>
+
+        <!--CONTACT SECTION-->
+        <div class="row" id="contact">
+            <!--Contact image, left column-->
+            <div class="column_2 column_tall_image">
+                <img src="images/mailbox.jpg" alt="Image of a mailbox on an outdoor wall">
+            </div>
+            <!--Contact form, right column-->
+            <div class="column_1 column_tall_form">
+                <h1>Contact</h1>
+                <!--This specifies where and how to send the form data; we are leaving it blank-->
+                <form action="https://formspree.io/f/xvgwkebg" method="POST">
+                    <label>Name:</label>
+                        <input type="text" placeholder="Please enter your name here">
+                    <label>Email:</label>
+                        <input type="text" placeholder="Please enter your email here">
+                    <label>Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                        <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+        <!--FOOTER SECTION-->
+        <footer>
+            <p>
+                <p class="center"><a href="mailto:%22Nathaniel Hill%22 natehill22@gmail.com" target="_blank">Nathaniel (Nate) Hill</a></p>
+                <br>
+            </p>
+        </footer>
+    </body>
+</html>
