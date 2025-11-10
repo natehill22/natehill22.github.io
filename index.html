@@ -16,9 +16,10 @@
         <!--NAVBAR-->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
+            <a href="#slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a> <!--Clicking this should open the contact form. Doubleclicking (when open) will close the contact form-->
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -52,6 +53,45 @@
             </strong>
         </div>
 
+        <!--SLIDESHOW SECTION-->
+        <div id="slideshow">
+            <div id="slideshow-background">
+                <div id="slideshow-container">
+                    <!--Slide 1 of 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/LIheadshot.jpg" alt="Headshot of the site's creator">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--Slide 2 of 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--Slide 3 of 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!--Slide 4 of 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/SQL_and_Database.jpg" alt="SQL logo">
+                        <div class="text">back-end development, databases and SQL.</div>
+                    </div>
+                    <!--Previous and Next buttons-->
+                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!--Adds a space between the slideshow and the dots below it-->
+
+                <!--Slideshow dots [another way for users to navigate through the slideshow]-->
+                <div style="text-align: center; padding-bottom: 2vh;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                </div>
+            </div>
+        </div>
         <!--ABOUT SECTION-->
         <div class="row" id="about">
             <!--Left column-->
@@ -69,8 +109,7 @@
                         Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
                     language: HTML, CSS, JavaScript, SQL, Python, and more.
                     <br>
-                    <br>I am a full-stack developer and would love to work with you on your project. <a
-                        href="#contact">Contact</a> me below!
+                    <br>I am a full-stack developer and would love to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below!
                 </p>
             </div>
         </div>
@@ -93,23 +132,22 @@
         </div>
 
         <!--CONTACT SECTION-->
-        <div class="row" id="contact">
-            <!--Contact image, left column-->
-            <div class="column_2 column_tall_image">
-                <img src="images/mailbox.jpg" alt="Image of a mailbox on an outdoor wall">
-            </div>
-            <!--Contact form, right column-->
-            <div class="column_1 column_tall_form">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="https://formspree.io/f/xvgwkebg" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <div id="contact">
+            <button onclick="openForm()" class="pop-up-button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xvgwkebg" method="POST" class="form-container"> <!--The formspree service will send entered contact details to my email-->
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -121,6 +159,7 @@
                 <br>
             </p>
         </footer>
+        <script src="js/portfolio.js"></script>
     </body>
 </html>
 
