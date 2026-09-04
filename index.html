@@ -1,71 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-    <!--HEAD-->
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nathaniel (Nate) Hill</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
         <link rel="icon" type="image/x-icon" href="images/megaman.jpg">
     </head>
-    <!--BODY-->
 
     <body>
+        <!--Header and Navigation-->
+        <header>
+            <nav class="navbar">
+                <a class="active" href="#home">Home</a>
+                <a href="#slideshow">Skills</a>
+                <a href="#about">About</a>
+                <a href="#github">GitHub</a>
+                <button type="button" onclick="toggleForm()" class="contact-nav-btn">Contact</button> <!--Clicking this should open the contact form-->
+            </nav>
+        </header>
 
-        <!--NAVBAR-->
-        <div class="navbar">
-            <a class="active" href="#home">Home</a>
-            <a href="#slideshow">Slideshow</a>
-            <a href="#about">About</a>
-            <a href="#github">GitHub</a>
-            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a> <!--Clicking this should open the contact form. Doubleclicking (when open) will close the contact form-->
-        </div>
+        <!--Background Video-->
+        <section id="home" class="intro">
+            <div class="video-background">
+                <!--Plays video within normal layout area and provides a placeholder image if video fails-->
+                <video autoplay muted loop playsinline id="Typing_Video" poster="images/video-placeholder.jpg">
+                    <source src="images/video/Typing.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video. <!--Display message if video fails to run-->
+                </video>
+            </div>
 
-        <!--Breaks inserted to add space between navbar and the first heading-->
-        <br>
-        <br>
-
-        <!--BACKGROUND VIDEO-->
-        <div id="home">
-            <video autoplay muted loop id="Typing_Video">
-                <source src="images/video/Typing.mp4" type="video/mp4">
-                <!--Display message if video fails to run-->
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
-
-        <!--VIDEO TEXT-->
-        <div class="Video_Text">
-            <h1 class="white-text">Nathaniel Hill's Portfolio</h1>
-            <strong>
-                <p class="center">
-                    <br>
-                    <q>Programming isn't about what you know; it's about what you can figure out.</q>
-                    <br> -Chris Pine
-                    <br>
-                    <br>
-                    <br> My name is Nathaniel Hill. Welcome to my portfolio website. On it, I will tell you about my
-                    background and experience.
-                    <br>
-                    <br> Thank you for stopping by and enjoy!
+            <div class="Video_Text">
+                <h1 class="white-text">Nathaniel Hill's Portfolio</h1>
+                <blockquote>
+                    <p class="quote-text">Programming isn't about what you know; it's about what you can figure out.</p>
+                        <cite>-- Chris Pine</cite>
+                </blockquote>
+                <p class="intro-text center white-text">
+                My name is Nathaniel Hill. Welcome to my portfolio website. On it, I will tell you about my
+                background and experience. Thank you for stopping by and enjoy!
                 </p>
-            </strong>
-        </div>
+            </div>
+        </section>
 
-        <!--SLIDESHOW SECTION-->
-        <div id="slideshow">
+        <!--Skills Slideshow-->
+        <section id="slideshow">
             <div id="slideshow-background">
                 <div id="slideshow-container">
                     <!--Slide 1 of 5-->
                     <div class="mySlides fade">
                         <img class="slideshow-images" src="images/LIheadshot.jpg" alt="Headshot of the site's creator">
-                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                        <div class="text">
+                            <button type="button" class="contact-link-btn" onclick="toggleForm()">Contact me now!</button>
+                        </div>
                     </div>
                     <!--Slide 2 of 5-->
                     <div class="mySlides fade">
-                        <img class="slideshow-images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
-                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                        <img class="slideshow-images fit-vertical" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
+                        <div class="text">I am a full-stack software developer, trained in: HTML, CSS, JavaScript,</div>
                     </div>
                     <!--Slide 3 of 5-->
                     <div class="mySlides fade">
@@ -75,87 +68,94 @@
                     <!--Slide 4 of 5-->
                     <div class="mySlides fade">
                         <img class="slideshow-images" src="images/SQL_and_Database.jpg" alt="SQL logo">
-                        <div class="text">back-end development, databases and SQL.</div>
+                        <div class="text">back-end development, databases and SQL,</div>
+                    </div>
+                    <!--Slide 5 of 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow-images fit-horizontal" src="images/Mean.jpg" alt="MEAN Stack image">
+                        <div class="text">the MEAN stack (MongoDB, Express.js, Angular.js, Node.js).</div>
                     </div>
                     <!--Previous and Next buttons-->
-                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <button type="button" class="previous" onclick="plusSlides(-1)">&#10094;</button>
+                    <button type="button" class="next" onclick="plusSlides(1)">&#10095;</button>
                 </div>
-                <br> <!--Adds a space between the slideshow and the dots below it-->
 
                 <!--Slideshow dots [another way for users to navigate through the slideshow]-->
-                <div style="text-align: center; padding-bottom: 2vh;">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span> 
+                <div class="dot-container">
+                    <button type="button" class="dot" onclick="currentSlide(1)"></button>
+                    <button type="button" class="dot" onclick="currentSlide(2)"></button>
+                    <button type="button" class="dot" onclick="currentSlide(3)"></button>
+                    <button type="button" class="dot" onclick="currentSlide(4)"></button>
+                    <button type="button" class="dot" onclick="currentSlide(5)"></button>
                 </div>
             </div>
-        </div>
-        <!--ABOUT SECTION-->
-        <div class="row" id="about">
-            <!--Left column-->
-            <div class="column_2">
+        </section>
+
+        <!--About-->
+        <section class="row" id="about">
+            <div class="column_2"> <!--Left column-->
                 <img src="images/code1.jpg" alt="A close-up image of computer code">
             </div>
-            <!--Right column-->
-            <div class="column_1">
-                <h1>About</h1>
+            <div class="column_1"> <!--Right column-->
+                <h2>About</h2>
                 <p>
                     I am a software developer who loves to code! I also enjoy biking, cooking, baking, traveling, gaming, and time
                     with my family.
-                    <br>
-                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
-                        Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
-                    language: HTML, CSS, JavaScript, SQL, Python, and more.
-                    <br>
-                    <br>I am a full-stack developer and would love to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below!
                 </p>
-            </div>
-        </div>
-
-        <!--GITHUB SECTION-->
-        <div class="row" id="github">
-            <!--Left column-->
-            <div class="column_1">
-                <h1>GitHub</h1>
                 <p>
-                    You can view my coding projects on my GitHub profile here:
-                    <br>
-                <p class="center"><a href="https://github.com/natehill22/" target="_blank">Nathaniel Hill's GitHub</a></p>
+                    I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank" rel="noopener noreferrer">The Tech
+                    Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
+                    languages: HTML, CSS, JavaScript, SQL, Python, and more.
+                </p>
+                <p>
+                    I am a full-stack developer and would love to work with you on your project. <button type="button" onclick="toggleForm()" class="inline-contact-btn">Contact</button> me below!
                 </p>
             </div>
-            <!--Right column-->
-            <div class="column_2">
-                <a href="https://github.com/natehill22/" target="_blank"><img src="images/GitHub.png" alt="GitHub logo"></a>
-            </div>
-        </div>
+        </section>
 
-        <!--CONTACT SECTION-->
-        <div id="contact">
-            <button onclick="openForm()" class="pop-up-button">CONTACT</button>
+        <!--Github-->
+        <section class="row" id="github">
+            <div class="column_1"> <!--Left column-->
+                <h2>GitHub</h2>
+                <p class="center">
+                    You can view my coding projects on my GitHub profile here:
+                </p>
+                <p class="center">
+                    <a href="https://github.com/natehill22/" target="_blank" rel="noopener noreferrer">Nathaniel Hill's GitHub</a></p>
+                </p>
+            </div>
+            <div class="column_2"> <!--Right column-->
+                <a href="https://github.com/natehill22/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/GitHub.png" alt="GitHub logo">
+                </a>
+            </div>
+        </section>
+
+        <!--Contact-->
+        <section id="contact">
+            <button type="button" onclick="toggleForm()" class="pop-up-button">CONTACT</button>
             <div class="form-popup" id="myForm">
-                <form action="https://formspree.io/f/xvgwkebg" method="POST" class="form-container"> <!--The formspree service will send entered contact details to my email-->
-                    <h1>Contact</h1>
+                <form action="https://formspree.io/f/xvgwkebg" method="POST" class="form-container" id="contactForm"> <!--The formspree service will send entered contact details to my email-->
+                    <h2>Contact</h2>
                     <label for="name"><b>Name</b></label>
-                        <input type="text" placeholder="Type your name here" name="name" required>
-                    <label for="phone"><b>Phone</b></label>
-                        <input type="text" placeholder="Type your phone number here" name="phone">
-                    <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Type your email address here" name="email" required>
+                        <input type="text" id="name" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b><span id="phoneErrors"></span></label> <!--Shows errors inline-->
+                        <input type="tel" id="phone" placeholder="123-456-7890" name="phone">
+                    <label for="email"><b>Email</b><span id="emailErrors"></span></label> <!--Shows errors inline-->
+                        <input type="text" id="email" placeholder="name@domain.com" name="email" required>
                     <label for="message"><b>Message</b></label>
-                        <input type="text" placeholder="Type your message here" name="message">
+                        <textarea id="message" placeholder="Type your message here" name="message" rows="4" required></textarea>
 
                     <button type="submit" class="btn">SUBMIT</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                    <button type="button" class="btn cancel" onclick="toggleForm()">CLOSE</button>
                 </form>
             </div>
-        </div>
+        </section>
 
-        <!--FOOTER SECTION-->
+        <!--Footer-->
         <footer>
             <p>
-                <p class="center"><a href="mailto:%22Nathaniel Hill%22 natehill22@gmail.com" target="_blank">Nathaniel (Nate) Hill</a></p>
+                <p class="center"><a href="mailto:%22Nathaniel Hill%22 natehill22@gmail.com" target="_blank" rel="noopener noreferrer">Nathaniel (Nate) Hill</a></p>
                 <br>
             </p>
         </footer>
