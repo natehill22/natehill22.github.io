@@ -331,6 +331,137 @@ header {
     background-color: #000000; /*Sets color of dots when active or hovered*/
 }
 
+/*Projects*/
+#projects {
+    padding: 5rem 2rem;
+    background-color: #f0f0f0; /*Matches skill background color*/
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem; /*Spacing between projects*/
+    padding-top: 1rem;
+}
+
+.project-row {
+    display: flex;
+    align-items: stretch;
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.project-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(137, 207, 240, 0.3);
+}
+
+/*Handles alternating (reversed) layout structure*/
+.project-reverse {
+    flex-direction: row-reverse;
+}
+
+.project-gif-frame {
+    flex: 1 1 50%; /*Gives gif half row width*/
+    height: auto;
+    min-height: 400px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-gif {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    object-fit: contain; 
+    filter: grayscale(20%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-row:hover .project-gif {
+    filter: grayscale(0%);
+}
+
+.project-row .project-gif:hover {
+    transform: scale(1.03);
+}
+
+.project-info {
+    flex: 1 1 50%; /*Gives info the other half of row width*/
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    text-align: left; /*Card ID configuration*/
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.project-summary {
+    font-family: Georgia, Garamond, serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.project-tech-stack {
+    font-family: Georgia, Garamond, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #555555;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.project-tech-stack strong {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.github-link-btn {
+    display: inline-block;
+    width: auto;
+    min-width: 220px;
+    text-align: center;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.github-link-btn:hover {
+    background-color: #89CFF0;
+    border-color: #89CFF0;
+    color: #000000;
+}
+
 /*Contact Form*/
 .pop-up-button {
     position: fixed; /*Button is positioned relative to the viewport and stays in the same location no matter what*/
@@ -472,10 +603,15 @@ footer a {
 /*Media queries -  applies different styles for different media/types of devices*/
 /*Tablet and Landscape viewports*/
 @media screen and (max-width: 1080px){
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap !important; /*Forces items onto a single line*/
+    }
     .navbar a, .navbar .contact-nav-btn {
-        width: 20%;
+        width: auto;
         font-size: 0.95rem;
-        padding: 0.75rem 0.25rem;
+        padding: 0.75rem 1rem;
     }
 
     .quote-text {
@@ -495,12 +631,37 @@ footer a {
     h2:hover {
         transform: scale(1) !important; /*Keeps elements at original size*/
     }
+
+    .projects-container {
+        max-width: 90%;
+    }
+
+    .project-row, .project-reverse {
+        flex-direction: column;
+    }
+
+    .project-gif-frame, .project-info {
+        flex: 1 1 100%; /*Reset flex to fill screen width when stacked*/
+    }
+
+    .project-gif-frame {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .project-info {
+        padding: 2rem;
+    }
 }
 
 /*Smart Phones and Smaller Mobile viewports*/
 @media screen and (max-width: 768px) {
     body {
         font-size: 0.95rem;
+    }
+
+    p {
+        text-align: left; /*Override previous justify that adds weird spacing in mobile renderings*/
     }
 
     .navbar {
@@ -628,8 +789,43 @@ footer a {
     }
 
     p {
-        text-align: left /*Changes text from "justified" which stretches words on small widths*/;
+        text-align: left; /*Changes text from "justified" which stretches words on small widths*/
         font-size: 1.05rem;
+    }
+
+    #projects {
+        padding: 3rem 1rem !important;
+    }
+
+    .projects-container {
+        max-width: 100%; /*Unlocks container boundaries on mobile*/
+        gap: 3.5rem;
+    }
+
+    .project-gif-frame {
+        height: 220px;
+        min-height: auto;
+    }
+
+    .project-info {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .project-info h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .project-summary, .project-tech-stack {
+        font-size: 1rem !important;
+    }
+
+    .github-link-btn {
+        width: 100% !important; /*Button fills screen width*/
+        text-align: center;
+    }
+
+    .project-row:hover {
+        transform: none !important; 
     }
 
     footer {
@@ -649,6 +845,9 @@ footer a {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+
+    body {
         overflow-x: hidden !important; /*Locks horizontal viewport stretching*/
     }
 

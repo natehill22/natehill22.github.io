@@ -1,3 +1,8 @@
+//Smooths animation for screen load
+window.addEventListener("load", () => {
+    document.body.classList.remove("fade-out");
+});
+
 //Adds dynamic nav-highlighting upon scroll
 window.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
@@ -66,9 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let pError = [];
             let eError = [];
 
-            //Get input values (cleaned of excess space)
-            const phoneValue = document.getElementById("phone").value.trim();
-            const emailValue = document.getElementById("email").value.trim();
+            //Gets input values
+            const phoneInput = document.getElementById("phone");
+            const emailInput = document.getElementById("email");
+
+            //Cleans excess space from values if they exist or gives an empty string if not
+            const phoneValue = phoneInput ? phoneInput.value.trim() : "";
+            const emailValue = emailInput ? emailInput.value.trim() : "";
 
             //Validate Phone
             if (phoneValue !== "") {

@@ -17,6 +17,7 @@
                 <a href="#slideshow">Skills</a>
                 <a href="#about">About</a>
                 <a href="#github">GitHub</a>
+                <a href="#projects">Projects</a>
                 <button type="button" onclick="toggleForm()" class="contact-nav-btn">Contact</button> <!--Clicking this should open the contact form-->
             </nav>
         </header>
@@ -103,9 +104,8 @@
                     with my family.
                 </p>
                 <p>
-                    I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank" rel="noopener noreferrer">The Tech
-                    Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
-                    languages: HTML, CSS, JavaScript, SQL, Python, and more.
+                    I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank" rel="noopener noreferrer">The Tech Academy</a>'s Python Boot Camp, and trained and experienced in the following web and programming
+                    languages: HTML, CSS, JavaScript, SQL, Python, the MEAN Stack and more.
                 </p>
                 <p>
                     I am a full-stack developer and would love to work with you on your project. <button type="button" onclick="toggleForm()" class="inline-contact-btn">Contact</button> me below!
@@ -121,13 +121,83 @@
                     You can view my coding projects on my GitHub profile here:
                 </p>
                 <p class="center">
-                    <a href="https://github.com/natehill22/" target="_blank" rel="noopener noreferrer">Nathaniel Hill's GitHub</a></p>
+                    <a href="https://github.com/natehill22?tab=repositories" target="_blank" rel="noopener noreferrer">Nathaniel Hill's GitHub</a></p>
                 </p>
             </div>
             <div class="column_2"> <!--Right column-->
                 <a href="https://github.com/natehill22/" target="_blank" rel="noopener noreferrer">
                     <img src="images/GitHub.png" alt="GitHub logo">
                 </a>
+            </div>
+        </section>
+
+        <!--Projects-->
+        <section id="projects">
+            <h2>Dedicated Projects</h2>
+            <div class="projects-container">
+
+                <!--Project 1-->
+                <div class="project-row">
+                    <div class="project-gif-frame">
+                        <img src="images/proj-TeaApp-Site-Create-load.gif" alt="Teas App demo gif" class="project-gif">
+                    </div>
+                    <div class="project-info">
+                        <h3>Teas App</h3>
+                        <p class="project-summary">
+                            The Tea App is a desktop web application that assists users in documenting, listing, managing, and rating their own collection of different types of teas. Primarily accomplished through a solid foundation in CRUD functionality, the app allows users to manage database operations (add, edit, view, sort, delete) through the webapp interface. Additionally, it allows users to search through both web-scraped site data and API returned data (in several different views) and preloads selected rows' data onto the create page to ease in record creation.
+                        </p>
+                        <p class="project-tech-stack">
+                            <strong>Built with:</strong> Django, Python, JavaScript, HTML/CSS, Bootstrap, SQLite (via Django ORM), Crispy Forms, BeautifulSoup, Regex, TextBlob
+                        </p>
+                        <div class="project-acions">
+                            <a href="https://github.com/natehill22/Python-Live-Project--TTA" target="_blank" class="github-link-btn">
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Project Card 2-->
+                <div class="project-row project-reverse">
+                    <div class="project-gif-frame">
+                        <img src="images/proj-Todo-App-MEAN.gif" alt="Todo App demo gif" class="project-gif">
+                    </div>
+                    <div class="project-info">
+                        <h3>Todo App</h3>
+                        <p class="project-summary">
+                            The Todo App is a simple full-stack app designed to help users in managing (creating, reading, marking/updating, and deleting) their own list of Todo tasks. I opted to use decoupled architecture (backend and frontend servers that communicated through RESTful API network requests) and built out CRUD functionality with modern Angular standards (Angular signals for reactive state management and &#64;if syntax for better performance). 
+                        </p>
+                        <p class="project-tech-stack">
+                            <strong>Built with:</strong> MEAN Stack (MongoDB, Express.js, Angular.js, Node.js), JavaScript, HTML/CSS, Mongoose, CORS
+                        </p>
+                        <div class="project-acions">
+                            <a href="https://github.com/natehill22/JavaScript-Frameworks-Projects/tree/main/My%20MEAN%20Todo" target="_blank" class="github-link-btn">
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Project Card 3-->
+                <div class="project-row">
+                    <div class="project-gif-frame">
+                        <img src="images/proj-Posts-App-MEAN.gif" alt="Posts App demo gif" class="project-gif">
+                    </div>
+                    <div class="project-info">
+                        <h3>Posts App</h3>
+                        <p class="project-summary">
+                            The Posts app is intended as a single-page CRUD-functional web application where users can manage Posts uploaded to a specific page (they can view, display, update, create, and delete posts [should they have proper permissions]). Complete with image upload, pagination, user authentication, authorization, error handling, and many other optimizations, I utilized modern Angular features like Standalone Components, Angular Signals (API and Inputs), Angular Materials, Reactive Forms, Functional HTTP Interceptors and Route Guards to achieve the desired functionality. 
+                        </p>
+                        <p class="project-tech-stack">
+                            <strong>Built with:</strong> MEAN Stack (MongoDB, Express.js, Angular.js, Node.js), JavaScript, HTML/CSS, Mongoose, bcrypt, jwt(jsonwebtoken), multer, MIME-type validators
+                        </p>
+                        <div class="project-acions">
+                            <a href="https://github.com/natehill22/JavaScript-Frameworks-Projects/tree/main/MEAN%20Stack%20Guide%20-%20Angular%20and%20Node/mean-course" target="_blank" class="github-link-btn">
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
