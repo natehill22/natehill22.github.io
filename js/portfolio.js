@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let pError = [];
             let eError = [];
 
-            //Gets input values
+            //Gets input values from the document
             const phoneInput = document.getElementById("phone");
             const emailInput = document.getElementById("email");
 
